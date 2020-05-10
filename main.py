@@ -12,6 +12,8 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
     words = words.replace(',', '')
     words = words.replace('.', '')
     words = words.replace('!', '')
+    words = words.replace('(', '')
+    words = words.replace(')', '')
     words = words.replace('?', '').split(' ')
 
     phon_file = open(phon_name, encoding="utf8")
@@ -19,6 +21,8 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
     phonetics = phonetics.replace(',', '')
     phonetics = phonetics.replace('.', '')
     phonetics = phonetics.replace('!', '')
+    phonetics = phonetics.replace('(', '')
+    phonetics = phonetics.replace(')', '')
     phonetics = phonetics.replace('?', '').split(' ')
 
     for bword, word, first, second, third, rhyme_word in zip(words[0:],words[1:], words[2:], words[3:], words[4:], phonetics[1:]) :
@@ -135,7 +139,7 @@ def generate_lyrcis(dict, rhyme_dict, word):
         # LOSUJE RYM
         while True:
             rhyme = random.choice(list(rhyme_dict.keys()))
-            if len(rhyme_dict[rhyme]) > 1:
+            if len(rhyme_dict[rhyme]) > 3:
                 break
         rhymes = ['null', 'null']
         for i in range(2):
@@ -161,6 +165,7 @@ def generate_lyrcis(dict, rhyme_dict, word):
                     rhyme_index = rhyme_index + 1
                     lyrcis.append('\n')
                     break
+        lyrcis.append('\n')
 
 
 
@@ -188,4 +193,4 @@ if __name__ == '__main__':
         dictionary[word].count_probability()
 
 
-    print(generate_lyrcis(dictionary, rhyme_dictionary, "If"))
+    print(generate_lyrcis(dictionary, rhyme_dictionary, ""))

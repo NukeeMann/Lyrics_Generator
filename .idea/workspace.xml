@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="" />
+    <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1bZhDmY1qhHalPG7SGVuQyJCuxL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,8 +29,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lyrics1.txt" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/lyrics1.txt" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michal\Documents\GitHub\Lyrics_Generator\database\phonetics" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="MarkovRap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -89,46 +102,46 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="93" y="93" width="1190" height="547" key="DiffContextDialog" timestamp="1588882134465">
+    <state x="93" y="93" width="1190" height="547" key="DiffContextDialog" timestamp="1589123576261">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state x="93" y="93" width="1190" height="547" key="DiffContextDialog/0.0.1376.733@0.0.1376.733" timestamp="1588882134465" />
-    <state x="469" y="122" key="FileChooserDialogImpl" timestamp="1588882053028">
+    <state x="93" y="93" width="1190" height="547" key="DiffContextDialog/0.0.1376.733@0.0.1376.733" timestamp="1589123576261" />
+    <state x="469" y="122" key="FileChooserDialogImpl" timestamp="1589123567713">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state x="469" y="122" key="FileChooserDialogImpl/0.0.1376.733@0.0.1376.733" timestamp="1588882053028" />
-    <state width="1355" height="302" key="GridCell.Tab.0.bottom" timestamp="1589121279447">
+    <state x="469" y="122" key="FileChooserDialogImpl/0.0.1376.733@0.0.1376.733" timestamp="1589123567713" />
+    <state width="1355" height="269" key="GridCell.Tab.0.bottom" timestamp="1589125082393">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="302" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589121279447" />
-    <state width="1355" height="302" key="GridCell.Tab.0.center" timestamp="1589121279447">
+    <state width="1355" height="269" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589125082393" />
+    <state width="1355" height="269" key="GridCell.Tab.0.center" timestamp="1589125082393">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="302" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1589121279447" />
-    <state width="1355" height="302" key="GridCell.Tab.0.left" timestamp="1589121279447">
+    <state width="1355" height="269" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1589125082393" />
+    <state width="1355" height="269" key="GridCell.Tab.0.left" timestamp="1589125082393">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="302" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1589121279447" />
-    <state width="1355" height="302" key="GridCell.Tab.0.right" timestamp="1589121279447">
+    <state width="1355" height="269" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1589125082393" />
+    <state width="1355" height="269" key="GridCell.Tab.0.right" timestamp="1589125082393">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="302" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1589121279447" />
-    <state width="1355" height="154" key="GridCell.Tab.1.bottom" timestamp="1589121178194">
+    <state width="1355" height="269" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1589125082393" />
+    <state width="1355" height="269" key="GridCell.Tab.1.bottom" timestamp="1589125083198">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="154" key="GridCell.Tab.1.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589121178194" />
-    <state width="1355" height="154" key="GridCell.Tab.1.center" timestamp="1589121178194">
+    <state width="1355" height="269" key="GridCell.Tab.1.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589125083198" />
+    <state width="1355" height="269" key="GridCell.Tab.1.center" timestamp="1589125083198">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="154" key="GridCell.Tab.1.center/0.0.1376.733@0.0.1376.733" timestamp="1589121178194" />
-    <state width="1355" height="154" key="GridCell.Tab.1.left" timestamp="1589121178194">
+    <state width="1355" height="269" key="GridCell.Tab.1.center/0.0.1376.733@0.0.1376.733" timestamp="1589125083198" />
+    <state width="1355" height="269" key="GridCell.Tab.1.left" timestamp="1589125083198">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="154" key="GridCell.Tab.1.left/0.0.1376.733@0.0.1376.733" timestamp="1589121178194" />
-    <state width="1355" height="154" key="GridCell.Tab.1.right" timestamp="1589121178194">
+    <state width="1355" height="269" key="GridCell.Tab.1.left/0.0.1376.733@0.0.1376.733" timestamp="1589125083198" />
+    <state width="1355" height="269" key="GridCell.Tab.1.right" timestamp="1589125083198">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="154" key="GridCell.Tab.1.right/0.0.1376.733@0.0.1376.733" timestamp="1589121178194" />
+    <state width="1355" height="269" key="GridCell.Tab.1.right/0.0.1376.733@0.0.1376.733" timestamp="1589125083198" />
     <state x="266" y="103" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588952884563">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
@@ -139,8 +152,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>190</line>
-          <option name="timeStamp" value="16" />
+          <line>195</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
