@@ -25,9 +25,9 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
 
         # Ucinamy rym do ostatnich 2 dzwiekow
         if len(rhyme_word) > 3:
-            rhyme_word = rhyme_word[len(rhyme_word) - 2] + rhyme_word[len(rhyme_word) - 1]
+            rhyme_word = rhyme_word[len(rhyme_word) - 3] + rhyme_word[len(rhyme_word) - 2] + rhyme_word[len(rhyme_word) - 1]
 
-        #if len(rhyme_word) > 2:
+        if len(rhyme_word) > 2:
             if rhyme_word not in rhyme_dict.keys():
                 rhyme_dict[rhyme_word] = [word]
             else:
@@ -147,7 +147,7 @@ def generate_lyrcis(dict, rhyme_dict, word):
                 prev_word = prev_word_tmp
                 lyrcis.append(word)
                 words_in_line = words_in_line + 1
-                if words_in_line > 20:
+                if words_in_line > 10:
                     if len(list(rhyme_dict[rhyme])) > 1 and rhymes[0] != 'null':
                         while True:
                             word = random.choice(list(rhyme_dict[rhyme]))
