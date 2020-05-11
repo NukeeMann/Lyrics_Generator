@@ -62,7 +62,7 @@ def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
     # SPRAWDZENIE CZY PIERWSZY NASTEPNY WYRAZ SIE RYMUJE
     first_nwords = dict[base_word].get_first_word_dic()
     for n1word in first_nwords.keys():
-        if n1word in rhyme_words and n1word != prev_rhyme:
+        if n1word in rhyme_words and n1word != prev_rhyme and n1word in dict[prev_word].get_second_word_dic().keys():
             return n1word
 
     # SPRAWDZENIE CZY DRUGI NASTEPNY WYRAZ SIE RYMUJE
@@ -74,7 +74,7 @@ def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
             word_first = dict[base_word].get_first_word_dic()
             for next_word in second_bwords:
                 # Szukanie nastepnego wyrazu
-                if next_word in word_first:
+                if next_word in word_first and next_word in dict[prev_word].get_second_word_dic().keys():
                     return next_word
 
     # SPRAWDZENIE CZY TRZECI NASTEPNY WYRAZ SIE RYMUJE
@@ -96,13 +96,10 @@ def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
 
 
 
-
-
-    chance = random.random()
+    chance = 0.5
     stack_prob = 0.0
     first_nword = dict[base_word].get_first_word_dic()
     for nword in first_nword.keys():
-
         if nword in rhyme_words:
             stack_prob = stack_prob + 1.5*first_nword[nword]
         else:
@@ -110,10 +107,9 @@ def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
 
         bword = dict[prev_word].get_second_word_dic()
         if nword in bword.keys():
-            stack_prob = stack_prob + bword[nword]
+            stack_prob = stack_prob + 100*bword[nword]
 
         # if X wyraz
-
         if stack_prob > chance:
             return nword
 
@@ -122,7 +118,7 @@ def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
             stack_prob = stack_prob + first_nword[nword]
 
         if nword in bword.keys():
-            stack_prob = stack_prob - bword[nword]
+            stack_prob = stack_prob - 4*bword[nword]
 
     return base_word
 
@@ -153,10 +149,16 @@ def generate_lyrcis(dict, rhyme_dict, word):
                 words_in_line = words_in_line + 1
                 if words_in_line > 10:
                     if len(list(rhyme_dict[rhyme])) > 1 and rhymes[0] != 'null':
-                        while True:
-                            word = random.choice(list(rhyme_dict[rhyme]))
-                            if word != rhymes[0]:
-                                break
+                        iterator  = 0
+                        for fake_rhyme in rhyme_dict[rhyme]:
+                            if fake_rhyme in dict[word].get_first_word_dic().keys():
+                                word = fake_rhyme
+                            iterator = iterator + 1
+                        if iterator >= len(rhyme_dict[rhyme]):
+                            while True:
+                                word = random.choice(list(rhyme_dict[rhyme]))
+                                if word != rhymes[0]:
+                                    break
                     else:
                         word = random.choice(list(rhyme_dict[rhyme]))
                     lyrcis.append(word)
