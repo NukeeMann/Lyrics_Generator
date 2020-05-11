@@ -5,7 +5,6 @@ import os
 from os import listdir
 from os.path import isfile, join
 
-#Laduje plik wraz z wymowa do dwoch slownikow tworzy polaczenia miedzy wyrazamia
 def load_file(file_name, phon_name, dict, rhyme_dict):
     file = open(file_name, encoding="utf8")
     words = re.sub("\n", " ", file.read().lower())
@@ -25,7 +24,7 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
     phonetics = phonetics.replace(')', '')
     phonetics = phonetics.replace('?', '').split(' ')
 
-    for bword, word, first, second, third, rhyme_word in zip(words[0:],words[1:], words[2:], words[3:], words[4:], phonetics[1:]) :
+    for bsword, bword, word, first, second, third, rhyme_word in zip(words[0:],words[1:], words[2:], words[3:], words[4:], words[5:], phonetics[2:]) :
 
         # Ucinamy rym do ostatnich 2 dzwiekow
         if len(rhyme_word) > 3:
@@ -46,89 +45,63 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
         dict[word].add_second_nword(second)
         dict[word].add_third_nword(third)
         dict[word].add_first_bword(bword)
+        dict[word].add_second_bword(bsword)
 
     return
 
 
-def generate_word(dict, base_word, rhyme_words, prev_word, prev_rhyme):
+def generate_word(dicti, rhyme_words, base_word, prev_word, prev_prev_word, prev_rhyme):
     # Jezeli slowa nie ma w slowniku losuj jakiekolwiek
-    if base_word not in dict.keys():
-        return random.choice(list(dict.keys()))
+    if base_word not in dicti.keys():
+        return random.choice(list(dicti.keys()))
 
     # Jezeli po slowie nie wystepuje nigdy inne slowo losuj dowolne
-    if len(dict[base_word].get_first_word_dic()) < 0:
-        return random.choice(list(dict.keys()))
+    if len(dicti[base_word].get_first_word_dic()) < 0:
+        return random.choice(list(dicti.keys()))
 
-    # SPRAWDZENIE CZY PIERWSZY NASTEPNY WYRAZ SIE RYMUJE
-    first_nwords = dict[base_word].get_first_word_dic()
-    for n1word in first_nwords.keys():
-        if n1word in rhyme_words and n1word != prev_rhyme and n1word in dict[prev_word].get_second_word_dic().keys():
-            return n1word
-
-    # SPRAWDZENIE CZY DRUGI NASTEPNY WYRAZ SIE RYMUJE
-    second_nwords = dict[base_word].get_second_word_dic()
-    for n2word in second_nwords.keys():
-        # Jezeli rym jest w drugim nastepnym wyrazie
-        if n2word in rhyme_words and n2word != prev_rhyme:
-            second_bwords = dict[n2word].get_before_word_dic()
-            word_first = dict[base_word].get_first_word_dic()
-            for next_word in second_bwords:
-                # Szukanie nastepnego wyrazu
-                if next_word in word_first and next_word in dict[prev_word].get_second_word_dic().keys():
-                    return next_word
-
-    # SPRAWDZENIE CZY TRZECI NASTEPNY WYRAZ SIE RYMUJE
-    third_words = dict[base_word].get_third_word_dic()
-    for n3word in third_words.keys():
-        # Jezeli rym jest w trzecim nastepnym wyrazie
-        if n3word in rhyme_words and n3word != prev_rhyme:
-            third_bwords = dict[n3word].get_before_word_dic()
-            word_second = dict[base_word].get_second_word_dic()
-            for n3bword in third_bwords.keys():
-                # Jezeli drugi nword jest taki sam jak bword trzeciego nword "lacznik miedzy wyrazami"
-                if n3bword in word_second:
-                    third_bword_bwords = dict[n3bword].get_before_word_dic()
-                    word_first = dict[base_word].get_first_word_dic()
-                    for next_word in third_bword_bwords:
-                        # Szukanie nastepnego wyrazu
-                        if next_word in word_first:
-                            return next_word
-
-
-
-    chance = 0.5
+    chance = random.random()
     stack_prob = 0.0
-    first_nword = dict[base_word].get_first_word_dic()
-    for nword in first_nword.keys():
-        if nword in rhyme_words:
-            stack_prob = stack_prob + 1.5*first_nword[nword]
-        else:
-            stack_prob = stack_prob + first_nword[nword]
+    FOUR_COMMON = 4.0
+    THREE_COMMON = 4.0
 
-        bword = dict[prev_word].get_second_word_dic()
-        if nword in bword.keys():
-            stack_prob = stack_prob + 100*bword[nword]
+    # Jezeli jest polaczenie miedzy dwoma poprzednimi wyrazami, obecnym i nastepnym
+    for bsword_third in dicti[prev_prev_word].get_third_word_dic():
+        for bword_second in dicti[prev_word].get_second_word_dic():
+            for word_first in dicti[base_word].get_first_word_dic():
+                if bword_second[0] == word_first[0] and word_first[0] == bsword_third[0] and word_first[0] != base_word:
+                    if word_first[0] in rhyme_words:
+                        return word_first[0]
+                    else:
+                        prob4 = stack_prob + FOUR_COMMON*(word_first[1] + bword_second[1] + bsword_third[1])
+                        if prob4 > chance:
+                            return word_first[0]
 
-        # if X wyraz
-        if stack_prob > chance:
-            return nword
+    # Jezeli jest polaczenie miedzy poprzednim wyraze, obecnym i nastepnym
+    for bword_second in dicti[prev_word].get_second_word_dic():
+        for word_first in dicti[base_word].get_first_word_dic():
+            if bword_second[0] == word_first[0] and word_first[0] != base_word:
+                if word_first[0] in rhyme_words:
+                    return word_first[0]
+                else:
+                    prob3 = stack_prob + THREE_COMMON*(word_first[1] + bword_second[1])
+                    if prob3 > chance:
+                        return word_first[0]
 
-        if nword in rhyme_words:
-            stack_prob = stack_prob - 1.5*first_nword[nword]
-            stack_prob = stack_prob + first_nword[nword]
+    # Jezeli jest poleczenie miedzy obecnym i nastepnym wyrazem i jest rym
+    for nword in dicti[base_word].get_first_word_dic():
+        if nword[0] in rhyme_words:
+            return nword[0]
 
-        if nword in bword.keys():
-            stack_prob = stack_prob - 4*bword[nword]
-
-    return base_word
+    return random.choice(list(dicti[base_word].get_first_word_dic()))[0]
 
 
 def generate_lyrcis(dict, rhyme_dict, word):
     lyrcis = []
     lyrcis.append(word)
-    word = generate_word(dict, word, '', word, 'null')
+    word = generate_word(dict, '', word, word, word, 'null')
     lyrcis.append(word)
     prev_word = word
+    prev_prev_word = word
 
 
     for i in range(20):
@@ -141,19 +114,33 @@ def generate_lyrcis(dict, rhyme_dict, word):
         for i in range(2):
             rhyme_index = 0
             words_in_line = 0
+
             while True:
                 prev_word_tmp = word    # Poprzedni wyraz ktory wystapil
-                word = generate_word(dict, word, rhyme_dict[rhyme], prev_word, rhymes[0])
+                word = generate_word(dict, rhyme_dict[rhyme], word, prev_word, prev_prev_word,rhymes[0])
+                prev_prev_word = prev_word
                 prev_word = prev_word_tmp
-                lyrcis.append(word)
+                # Poczatek zdania
+                if words_in_line == 0:
+                    lyrcis.append(word.capitalize())
+                else:
+                    lyrcis.append(word)
                 words_in_line = words_in_line + 1
+
+                # Jezeli zdanie jest za dlugie
                 if words_in_line > 10:
                     if len(list(rhyme_dict[rhyme])) > 1 and rhymes[0] != 'null':
                         iterator  = 0
+
+                        # Szukanie slowa rymujacego sie
                         for fake_rhyme in rhyme_dict[rhyme]:
-                            if fake_rhyme in dict[word].get_first_word_dic().keys():
-                                word = fake_rhyme
+                            if fake_rhyme != rhymes[0] and word != fake_rhyme:
+                                for tuple_word in dict[word].get_first_word_dic():
+                                    if fake_rhyme == tuple_word[0]:
+                                        word = fake_rhyme
+                                        break
                             iterator = iterator + 1
+
                         if iterator >= len(rhyme_dict[rhyme]):
                             while True:
                                 word = random.choice(list(rhyme_dict[rhyme]))
@@ -162,6 +149,8 @@ def generate_lyrcis(dict, rhyme_dict, word):
                     else:
                         word = random.choice(list(rhyme_dict[rhyme]))
                     lyrcis.append(word)
+
+                # Jezeli wyraz wylosowany jest w slowniku rymow, przechodzi do kolejnego zdania
                 if word in rhyme_dict[rhyme] and words_in_line > 4:
                     rhymes[rhyme_index] = word
                     rhyme_index = rhyme_index + 1
@@ -193,6 +182,7 @@ if __name__ == '__main__':
 
     for word in dictionary:
         dictionary[word].count_probability()
+        dictionary[word].sort()
 
 
     print(generate_lyrcis(dictionary, rhyme_dictionary, ""))
