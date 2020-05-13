@@ -5,6 +5,7 @@ import os
 from os import listdir
 from os.path import isfile, join
 
+
 def load_file(file_name, phon_name, dict, rhyme_dict):
     file = open(file_name, encoding="utf8")
     words = re.sub("\n", " ", file.read().lower())
@@ -13,6 +14,7 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
     words = words.replace('!', '')
     words = words.replace('(', '')
     words = words.replace(')', '')
+    words = words.replace('"', '')
     words = words.replace('?', '').split(' ')
 
     phon_file = open(phon_name, encoding="utf8")
@@ -22,6 +24,7 @@ def load_file(file_name, phon_name, dict, rhyme_dict):
     phonetics = phonetics.replace('!', '')
     phonetics = phonetics.replace('(', '')
     phonetics = phonetics.replace(')', '')
+    phonetics = phonetics.replace('"', '')
     phonetics = phonetics.replace('?', '').split(' ')
 
     for bsword, bword, word, first, second, third, rhyme_word in zip(words[0:],words[1:], words[2:], words[3:], words[4:], words[5:], phonetics[2:]) :
@@ -100,6 +103,7 @@ def generate_word(dicti, rhyme_words, base_word, prev_word, prev_prev_word, prev
 
     return random.choice(list(dicti[base_word].get_first_word_dic()))[0]
 
+
 def force_rhyme(dict, rhyme_dict, rhyme, rhymes, word):
     if len(list(rhyme_dict[rhyme])) > 1 and rhymes[0] != 'null':
         iterator = 0
@@ -120,6 +124,7 @@ def force_rhyme(dict, rhyme_dict, rhyme, rhymes, word):
                     return word
     else:
         return random.choice(list(rhyme_dict[rhyme]))
+
 
 def generate_lyrcis(dict, rhyme_dict, word):
     lyrcis = []
@@ -183,11 +188,12 @@ if __name__ == '__main__':
     # Przechowuje rymy i slowa do tych rymow
     rhyme_dictionary = {}
 
-    for f in listdir('database/'):
-        if '.txt' in f:
-            file_Name = 'database/' + f
-            phon_Name = 'database/phonetics/PHON_' + f
-            load_file(file_Name, phon_Name, dictionary, rhyme_dictionary)
+    for dire in listdir('database/'):
+        for f in listdir('database/'+dire+'/'):
+            if '.txt' in f:
+                file_Name = 'database/' + dire + '/' + f
+                phon_Name = 'database/'+dire+'/phonetics/PHON_' + f
+                load_file(file_Name, phon_Name, dictionary, rhyme_dictionary)
 
 
 
