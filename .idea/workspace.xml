@@ -3,34 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_8_mile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_bitch_please.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_fall.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_forgot_about_dre.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_im_back.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_kamikaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_like_toy_solider.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_lose_yourself.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_not_afraid.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_rap_god.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_the_way_iam.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_till_i_collapse.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_who_knew.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/eminem_without_me.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_8_mile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_bitch_please.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_fall.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_forgot_about_dre.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_im_back.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_kamikaze.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_like_toy_solider.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_lose_yourself.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_not_afraid.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_rap_god.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_the_way_iam.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_who_knew.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_without_me.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Drake/drake_started_from_the_bottom.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/Drake/phonetics/PHON_drake_started_from_the_bottom.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,38 +114,38 @@
       <screen x="0" y="0" width="1376" height="733" />
     </state>
     <state x="469" y="122" key="FileChooserDialogImpl/0.0.1376.733@0.0.1376.733" timestamp="1589123567713" />
-    <state width="1355" height="72" key="GridCell.Tab.0.bottom" timestamp="1589363479140">
+    <state width="1355" height="114" key="GridCell.Tab.0.bottom" timestamp="1589540138537">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589363479140" />
-    <state width="1355" height="72" key="GridCell.Tab.0.center" timestamp="1589363479140">
+    <state width="1355" height="114" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589540138537" />
+    <state width="1355" height="114" key="GridCell.Tab.0.center" timestamp="1589540138537">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1589363479140" />
-    <state width="1355" height="72" key="GridCell.Tab.0.left" timestamp="1589363479140">
+    <state width="1355" height="114" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1589540138537" />
+    <state width="1355" height="114" key="GridCell.Tab.0.left" timestamp="1589540138537">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1589363479140" />
-    <state width="1355" height="72" key="GridCell.Tab.0.right" timestamp="1589363479140">
+    <state width="1355" height="114" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1589540138537" />
+    <state width="1355" height="114" key="GridCell.Tab.0.right" timestamp="1589540138537">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1589363479140" />
-    <state width="1355" height="72" key="GridCell.Tab.1.bottom" timestamp="1589363479141">
+    <state width="1355" height="114" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1589540138537" />
+    <state width="1355" height="541" key="GridCell.Tab.1.bottom" timestamp="1589539456465">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.1.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589363479141" />
-    <state width="1355" height="72" key="GridCell.Tab.1.center" timestamp="1589363479141">
+    <state width="1355" height="541" key="GridCell.Tab.1.bottom/0.0.1376.733@0.0.1376.733" timestamp="1589539456465" />
+    <state width="1355" height="541" key="GridCell.Tab.1.center" timestamp="1589539456465">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.1.center/0.0.1376.733@0.0.1376.733" timestamp="1589363479141" />
-    <state width="1355" height="72" key="GridCell.Tab.1.left" timestamp="1589363479140">
+    <state width="1355" height="541" key="GridCell.Tab.1.center/0.0.1376.733@0.0.1376.733" timestamp="1589539456465" />
+    <state width="1355" height="541" key="GridCell.Tab.1.left" timestamp="1589539456464">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.1.left/0.0.1376.733@0.0.1376.733" timestamp="1589363479140" />
-    <state width="1355" height="72" key="GridCell.Tab.1.right" timestamp="1589363479141">
+    <state width="1355" height="541" key="GridCell.Tab.1.left/0.0.1376.733@0.0.1376.733" timestamp="1589539456464" />
+    <state width="1355" height="541" key="GridCell.Tab.1.right" timestamp="1589539456465">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="72" key="GridCell.Tab.1.right/0.0.1376.733@0.0.1376.733" timestamp="1589363479141" />
+    <state width="1355" height="541" key="GridCell.Tab.1.right/0.0.1376.733@0.0.1376.733" timestamp="1589539456465" />
     <state x="266" y="103" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588952884563">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
@@ -182,13 +156,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>204</line>
-          <option name="timeStamp" value="72" />
+          <line>62</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>195</line>
-          <option name="timeStamp" value="74" />
+          <line>58</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>113</line>
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
