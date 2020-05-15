@@ -1,11 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Display.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LyricsManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Generator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_8_mile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_bitch_please.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_fall.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_forgot_about_dre.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_im_back.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_kamikaze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_like_toy_solider.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_lose_yourself.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_not_afraid.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_rap_god.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_the_way_iam.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_till_i_collapse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_who_knew.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_without_me.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_8_mile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_bitch_please.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_fall.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_forgot_about_dre.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_im_back.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_kamikaze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_like_toy_solider.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_lose_yourself.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_not_afraid.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_rap_god.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_the_way_iam.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_who_knew.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_without_me.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Word.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1640">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LyricsManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Display.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -14,7 +100,57 @@
       </list>
     </option>
   </component>
+<<<<<<< Updated upstream
+=======
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>generateLyrics</find>
+      <find>word.</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/display" />
+        <option value="$PROJECT_DIR$/database/Display.py" />
+        <option value="$PROJECT_DIR$/LyricsManagment.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/WindowText.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
+        <option value="$PROJECT_DIR$/LyricsManager.py" />
+        <option value="$PROJECT_DIR$/Display.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+>>>>>>> Stashed changes
   <component name="ProjectId" id="1bZhDmY1qhHalPG7SGVuQyJCuxL" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lyrics_Generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lyrics_Generator" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,8 +158,33 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lyrics1.txt" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/lyrics1.txt" />
+=======
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python&#10;BuildoutCfg" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/PROJEKKKT" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michal\Documents\GitHub\Lyrics_Generator\database\phonetics" />
+    </key>
+>>>>>>> Stashed changes
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="MarkovRap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -88,6 +249,38 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17913593" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.26868907" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.34127843" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="WindowStateProjectService">
     <state x="93" y="93" width="1190" height="547" key="DiffContextDialog" timestamp="1588882134465">
       <screen x="0" y="0" width="1376" height="733" />
@@ -136,6 +329,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+<<<<<<< Updated upstream
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
@@ -143,6 +337,8 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
+=======
+>>>>>>> Stashed changes
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -151,5 +347,135 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="rhyme_word" language="Python" />
+        <watch expression="rhyme_word" language="Python" />
+        <watch expression="rhyme_word" language="Python" />
+        <watch expression="dictionary" language="Python" />
+        <watch expression="self.dictionary" language="Python" />
+        <watch expression="self.rhyme_dictionary" language="Python" />
+        <watch expression="vars" language="Python" />
+        <watch expression="var" language="Python" />
+        <watch expression="list" language="Python" />
+        <watch expression="name" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>name</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>list</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>var</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>vars</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.rhyme_dictionary</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.dictionary</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>dictionary</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rhyme_word</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/display">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Display.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda3/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="2349" column="21" lean-forward="true" selection-start-line="2349" selection-start-column="21" selection-end-line="2349" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WindowText.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Word.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1640">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LyricsManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

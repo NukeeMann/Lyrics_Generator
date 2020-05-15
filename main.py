@@ -1,10 +1,6 @@
-from Word import Word
-import re
-import random
-import os
-from os import listdir
-from os.path import isfile, join
+from LyricsManager import LyricsManager
 
+<<<<<<< Updated upstream
 #Laduje plik wraz z wymowa do dwoch slownikow tworzy polaczenia miedzy wyrazamia
 def load_file(file_name, phon_name, dict, rhyme_dict):
     file = open(file_name, encoding="utf8")
@@ -189,3 +185,11 @@ if __name__ == '__main__':
 
 
     print(generate_lyrcis(dictionary, rhyme_dictionary, "If"))
+=======
+def main():
+    lyricsManager=LyricsManager()
+
+
+if __name__ == '__main__':
+    main()
+>>>>>>> Stashed changes
