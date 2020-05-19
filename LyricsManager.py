@@ -27,10 +27,24 @@ class LyricsManager:
         for word in self.dictionary:
             self.dictionary[word].count_probability()
 
-        self.windowText = WindowText(artist,self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, ""))
+        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, ""))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
+    def createFromAllTexts(self):
+        for dire in listdir('database/'):
+            for f in listdir('database/'+dire+'/'):
+                if '.txt' in f:
+                    file_Name = 'database/' + dire + '/' + f
+                    phon_Name = 'database/'+dire+'/phonetics/PHON_' + f
+                    self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+
+        for word in self.dictionary:
+            self.dictionary[word].count_probability()
+
+        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, ""))
+        self.dictionary = {}
+        self.rhyme_dictionary = {}
 
     def createBySong(self, list):
         for song in list:
@@ -41,7 +55,7 @@ class LyricsManager:
         for word in self.dictionary:
             self.dictionary[word].count_probability()
 
-        self.windowText = WindowText("Created song",self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, ""))
+        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, ""))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 

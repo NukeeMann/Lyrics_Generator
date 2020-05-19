@@ -11,7 +11,7 @@ class Window:
 
     def __init__(self, x, y, managerRef):
         root=Tk()
-        root.title("Lyrics Generator v2.3")
+        root.title("Lyrics Generator v2.4")
         self.x = 0
         self.managerRef = managerRef
         self.y = 0
@@ -29,26 +29,26 @@ class Window:
 
     def displayDescrition(self):
         popup = Tk()
-        label = Label(popup, text="TODO Welcome in Lyrics Generator, application which can create the best song u can even imagine!", font=15, wraplength=250)
+        label = Label(popup, text="Welcome in Lyrics Generator, application which will create the best song u can imagine! The Generator will write the lyrics for you.."
+                                  "Application inspires by artists' songs and creates its own lyrics."
+                                  "In database, you can add your own song by choosing .txt file your with lyrics from your PC and phonetics lyrics .txt file (We recommend https://tophonetics.com/) named 'PHON_' + text file name.", font=15, wraplength=400, padx=30, pady=50)
         label.pack()
 
     def database(self):
         popup = Tk()
         popup.title("Lyrics Generator v2.3")
         self.canvas = Canvas(popup, width=400, height=525)
-        self.b = Button(self.canvas, text="Add new", font=14, command=self.fileManagment, bg="green",height =2, width = 25)
+        self.b = Button(self.canvas, text="Add new", font=14, command=lambda: self.fileManagment(popup), bg="green",height =2, width = 23)
         self.b.pack()
-        iter=2
         for f in listdir('database/Yours/'):
             if '.txt' in f:
                 self.b = Button(self.canvas, text=f, font=14, command=lambda f=f: self.readFile(f), height =2, width = 25)
                 self.b.pack()
-                iter+=1
         self.canvas.pack()
 
     def readFile(self,name):
         f = open('database/Yours/' + name , 'r', encoding="utf8")
-        showinfo(name,f.read())
+        windowText = WindowText(f.read())
 
 
     def generateLyrics(self):
@@ -59,15 +59,19 @@ class Window:
         self.canvas = Canvas(popup, width=200, height=225)
         self.b = Button(self.canvas, text="Eminem", font=14, command=lambda: self.createSongByArtist('Eminem',popup),height =2, width = 25)
         self.b.pack()
-        self.b = Button(self.canvas, text="2pac", font=14, command=lambda: self.createSongByArtist('2pac',popup),height =2, width = 25)
+        self.b = Button(self.canvas, text="Drake", font=14, command=lambda: self.createSongByArtist('Drake',popup),height =2, width = 25)
         self.b.pack()
         self.b = Button(self.canvas, text="50 cent", font=14, command=lambda: self.createSongByArtist('50cent',popup),height =2, width = 25)
         self.b.pack()
         self.b = Button(self.canvas, text="Yours", font=14, command=lambda: self.chooseTheSong(popup),height =2, width = 25)
         self.b.pack()
-        self.b = Button(self.canvas, text="Combine All", font=14, command=lambda: self.createSongByArtist('Combine All',popup),height =2, width = 25)
+        self.b = Button(self.canvas, text="Combine All", font=14, command=lambda: self.combineAll(popup),height =2, width = 25)
         self.b.pack()
         self.canvas.pack()
+
+    def combineAll(self,popup):
+        self.managerRef.createFromAllTexts()
+        popup.destroy()
 
     def createSongByArtist(self,name,popup):
         self.managerRef.createByArtist(name)
@@ -106,12 +110,14 @@ class Window:
                 songList.append(vars[i].get())
         if not songList:
             showerror(title="Error", message="Choose song!")
+            popup.destroy()
+            prevPopup.destroy()
             return
         self.managerRef.createBySong(songList)
         popup.destroy()
         prevPopup.destroy()
 
-    def fileManagment(self):
+    def fileManagment(self,popup):
         showinfo("Lyrics Generator", "Choose text file")
         text = askopenfilename()
         if not text:
@@ -134,24 +140,26 @@ class Window:
             showerror(title="Error", message="The name of file is incorrect. It has to have the same name as text file and starts with 'PHON'")
             return
         newPath = shutil.copy(phon, 'database/Yours/phonetics')
+        popup.destroy()
+        self.database()
 
     def path_leaf(self,path):
         head, tail = ntpath.split(path)
         return tail or ntpath.basename(head)
 
 class WindowText:
-    def __init__(self,artist, text):
+    def __init__(self, text):
         root = Tk()
         frame = Frame(root)
         frame.pack(expand=True, fill=BOTH)  # .grid(row=0,column=0)
-        canvas = Canvas(frame, width=460, height=600, scrollregion=(0, 0, 450, 1000))
-        canvas.create_text(240, 500,text = text)
+        canvas = Canvas(frame, width=800, height=600, scrollregion=(0, 0, 800, 1500))
+        canvas.create_text(400, 740,text = text, font=("Purisa", 15))
         hbar = Scrollbar(frame, orient=HORIZONTAL)
         hbar.pack(side=BOTTOM, fill=X)
         hbar.config(command=canvas.xview)
         vbar = Scrollbar(frame, orient=VERTICAL)
         vbar.pack(side=RIGHT, fill=Y)
         vbar.config(command=canvas.yview)
-        canvas.config(width=460, height=600)
+        canvas.config(width=800, height=600)
         canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
         canvas.pack(side=LEFT, expand=True, fill=BOTH)
