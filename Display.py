@@ -16,11 +16,11 @@ class Window:
         self.managerRef = managerRef
         self.y = 0
         self.canvas = Canvas(root, width=x, height=y)
-        self.b1 = Button(self.canvas, text="Description", font=9, command=self.displayDescrition, height =6, width = 30)
+        self.b1 = Button(self.canvas, text="Description", font=9, command=self.displayDescrition, height =6, width = 30, bg="gray")
         self.b1.place(relx=0.5, rely=0.048)
-        self.b2 = Button(self.canvas, text="Your Database", font=9, command=self.database,height =6, width = 30)
+        self.b2 = Button(self.canvas, text="Your Database", font=9, command=self.database,height =6, width = 30, bg="gray")
         self.b2.place(relx=0.5, rely=0.35)
-        self.b3 = Button(self.canvas, text="Generate Lyrics", font=9, command=self.generateLyrics,height =6, width = 30)
+        self.b3 = Button(self.canvas, text="Generate Lyrics", font=9, command=self.generateLyrics,height =6, width = 30, bg="gray")
         self.b3.place(relx=0.5, rely=0.65)
         img = PhotoImage(file="rapbot.ppm")
         self.canvas.create_image(0, 0, anchor=NW, image=img)
@@ -28,7 +28,9 @@ class Window:
         root.mainloop()
 
     def displayDescrition(self):
-        showinfo("Description", "TODO Welcome in Lyrics Generator, application which can create the best song u can even imagine!")
+        popup = Tk()
+        label = Label(popup, text="TODO Welcome in Lyrics Generator, application which can create the best song u can even imagine!", font=15, wraplength=250)
+        label.pack()
 
     def database(self):
         popup = Tk()
@@ -52,7 +54,7 @@ class Window:
     def generateLyrics(self):
         popup = Tk()
         popup.title("Lyrics Generator v2.3")
-        label = Label(popup, text="Choose the artist", font=15,height =2, width = 25)
+        label = Label(popup, text="Choose the artist", font=15,height =2, width = 25, bg="purple")
         label.pack()
         self.canvas = Canvas(popup, width=200, height=225)
         self.b = Button(self.canvas, text="Eminem", font=14, command=lambda: self.createSongByArtist('Eminem',popup),height =2, width = 25)
@@ -62,6 +64,8 @@ class Window:
         self.b = Button(self.canvas, text="50 cent", font=14, command=lambda: self.createSongByArtist('50cent',popup),height =2, width = 25)
         self.b.pack()
         self.b = Button(self.canvas, text="Yours", font=14, command=lambda: self.chooseTheSong(popup),height =2, width = 25)
+        self.b.pack()
+        self.b = Button(self.canvas, text="Combine All", font=14, command=lambda: self.createSongByArtist('Combine All',popup),height =2, width = 25)
         self.b.pack()
         self.canvas.pack()
 
@@ -107,9 +111,6 @@ class Window:
         popup.destroy()
         prevPopup.destroy()
 
-    def displayText(self, text):
-        showinfo(text)
-
     def fileManagment(self):
         showinfo("Lyrics Generator", "Choose text file")
         text = askopenfilename()
@@ -140,4 +141,17 @@ class Window:
 
 class WindowText:
     def __init__(self,artist, text):
-        showinfo(artist,text)
+        root = Tk()
+        frame = Frame(root)
+        frame.pack(expand=True, fill=BOTH)  # .grid(row=0,column=0)
+        canvas = Canvas(frame, width=460, height=600, scrollregion=(0, 0, 450, 1000))
+        canvas.create_text(240, 500,text = text)
+        hbar = Scrollbar(frame, orient=HORIZONTAL)
+        hbar.pack(side=BOTTOM, fill=X)
+        hbar.config(command=canvas.xview)
+        vbar = Scrollbar(frame, orient=VERTICAL)
+        vbar.pack(side=RIGHT, fill=Y)
+        vbar.config(command=canvas.yview)
+        canvas.config(width=460, height=600)
+        canvas.config(xscrollcommand=hbar.set, yscrollcommand=vbar.set)
+        canvas.pack(side=LEFT, expand=True, fill=BOTH)
