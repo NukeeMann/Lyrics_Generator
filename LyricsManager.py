@@ -194,6 +194,7 @@ class LyricsManager:
 
     def generate_lyrcis(self, dict, rhyme_dict, word):
         lyrcis = []
+        lyrcis.append('')
         lyrcis.append(word.capitalize())
         prev_word = word
         prev_prev_word = word
