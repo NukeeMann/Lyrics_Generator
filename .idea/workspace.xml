@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cd28eee-2ae6-4fec-aa1a-3ccec82159ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="09909119-f9a8-4183-b28b-65a680c17298" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_8_mile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_bitch_please.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_fall.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_forgot_about_dre.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_im_back.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_kamikaze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_like_toy_solider.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_lose_yourself.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_not_afraid.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_rap_god.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_the_way_iam.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_till_i_collapse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_who_knew.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/eminem_without_me.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_8_mile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_bitch_please.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_fall.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_forgot_about_dre.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_im_back.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_kamikaze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_like_toy_solider.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_lose_yourself.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_not_afraid.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_rap_god.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_the_way_iam.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_till_i_collapse.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_who_knew.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/phonetics/PHON_eminem_without_me.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,22 +136,22 @@
       <screen x="0" y="0" width="1376" height="733" />
     </state>
     <state x="469" y="122" key="FileChooserDialogImpl/0.0.1376.733@0.0.1376.733" timestamp="1589123567713" />
-    <state width="1355" height="180" key="GridCell.Tab.0.bottom" timestamp="1590319729349">
+    <state width="1355" height="180" key="GridCell.Tab.0.bottom" timestamp="1590319815356">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="180" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1590319729349" />
-    <state width="1355" height="180" key="GridCell.Tab.0.center" timestamp="1590319729348">
+    <state width="1355" height="180" key="GridCell.Tab.0.bottom/0.0.1376.733@0.0.1376.733" timestamp="1590319815356" />
+    <state width="1355" height="180" key="GridCell.Tab.0.center" timestamp="1590319815356">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="180" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1590319729348" />
-    <state width="1355" height="180" key="GridCell.Tab.0.left" timestamp="1590319729348">
+    <state width="1355" height="180" key="GridCell.Tab.0.center/0.0.1376.733@0.0.1376.733" timestamp="1590319815356" />
+    <state width="1355" height="180" key="GridCell.Tab.0.left" timestamp="1590319815356">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="180" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1590319729348" />
-    <state width="1355" height="180" key="GridCell.Tab.0.right" timestamp="1590319729349">
+    <state width="1355" height="180" key="GridCell.Tab.0.left/0.0.1376.733@0.0.1376.733" timestamp="1590319815356" />
+    <state width="1355" height="180" key="GridCell.Tab.0.right" timestamp="1590319815356">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
-    <state width="1355" height="180" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1590319729349" />
+    <state width="1355" height="180" key="GridCell.Tab.0.right/0.0.1376.733@0.0.1376.733" timestamp="1590319815356" />
     <state width="1355" height="269" key="GridCell.Tab.1.bottom" timestamp="1589125083198">
       <screen x="0" y="0" width="1376" height="733" />
     </state>
