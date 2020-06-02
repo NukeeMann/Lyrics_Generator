@@ -1,4 +1,5 @@
 from Word import Word
+from Sentence import Sentence
 import re
 import random
 import os
@@ -15,6 +16,8 @@ class LyricsManager:
         # Przechowuje rymy i slowa do tych rymow
         self.rhyme_dictionary = {}
 
+        self.sentectes_dictionary = {}
+
         self.mainWindow = Window(600, 400, self)
 
     def createByArtist(self, artist):
@@ -22,12 +25,14 @@ class LyricsManager:
             if '.txt' in f:
                 file_Name = 'database/' + artist +'/' + f
                 phon_Name = 'database/' + artist  +'/' + 'phonetics/PHON_' + f
-                self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                self.load_file_sentences(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                #self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)  PROBOWANIE CALYCH ZDAN
 
-        for word in self.dictionary:
-            self.dictionary[word].count_probability()
+        #for word in self.dictionary:
+        #    self.dictionary[word].count_probability()
 
-        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        #self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        self.windowText = WindowText(self.generate_lyrcis_sentences(self.dictionary, self.rhyme_dictionary))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
@@ -37,12 +42,13 @@ class LyricsManager:
                 if '.txt' in f:
                     file_Name = 'database/' + dire + '/' + f
                     phon_Name = 'database/'+dire+'/phonetics/PHON_' + f
-                    self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                    self.load_file_sentences(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
 
-        for word in self.dictionary:
-            self.dictionary[word].count_probability()
+        #for word in self.dictionary:
+        #    self.dictionary[word].count_probability()
 
-        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        #self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        self.windowText = WindowText(self.generate_lyrcis_sentences(self.dictionary, self.rhyme_dictionary))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
@@ -66,6 +72,7 @@ class LyricsManager:
         words = words.replace(',', '')
         words = words.replace('.', '')
         words = words.replace('!', '')
+        words = words.replace('=', '')
         words = words.replace('(', '')
         words = words.replace(')', '')
         words = words.replace('"', '')
@@ -77,6 +84,7 @@ class LyricsManager:
         phonetics = phonetics.replace('.', '')
         phonetics = phonetics.replace('!', '')
         phonetics = phonetics.replace('(', '')
+        phonetics = phonetics.replace('-', '')
         phonetics = phonetics.replace(')', '')
         phonetics = phonetics.replace('"', '')
         phonetics = phonetics.replace('?', '').split(' ')
@@ -106,6 +114,52 @@ class LyricsManager:
             dict[word].add_first_bword(bword)
             dict[word].add_second_bword(bsword)
 
+        return
+
+    def load_file_sentences(self, file_name, phon_name, dict, rhyme_dict):
+        file = open(file_name, encoding="utf8")
+        words = re.sub("\n", " \n ", file.read().lower())
+        words = words.replace(',', '')
+        words = words.replace('.', '')
+        words = words.replace('!', '')
+        words = words.replace('(', '')
+        words = words.replace('=', '')
+        words = words.replace('-', '')
+        words = words.replace(')', '')
+        words = words.replace('"', '')
+        words = words.replace('?', '').split(' ')
+
+        phon_file = open(phon_name, encoding="utf8")
+        phonetics = re.sub("\n", " \n ", phon_file.read())
+        phonetics = phonetics.replace(',', '')
+        phonetics = phonetics.replace('.', '')
+        phonetics = phonetics.replace('!', '')
+        phonetics = phonetics.replace('(', '')
+        phonetics = phonetics.replace(')', '')
+        phonetics = phonetics.replace('"', '')
+        phonetics = phonetics.replace('?', '').split(' ')
+
+        sentence = ""
+        for word, rhyme_word, nword in zip(words[0:],phonetics[0:], words[1:]):
+            if "\n" in nword:
+                if len(rhyme_word) > 3:
+                    rhyme_word = rhyme_word[len(rhyme_word) - 3] + rhyme_word[len(rhyme_word) - 2] + rhyme_word[
+                        len(rhyme_word) - 1]
+
+                if len(rhyme_word) > 2:
+                    if rhyme_word not in rhyme_dict.keys():
+                        rhyme_dict[rhyme_word] = [word]
+                    else:
+                        if word not in rhyme_dict[rhyme_word]:
+                            rhyme_dict[rhyme_word] = rhyme_dict[rhyme_word] + [word]
+                sentence +=word
+                if sentence not in dict:
+                    dict[sentence] = Sentence(sentence)
+                    dict[sentence].add_sentence(sentence)
+                    dict[sentence].add_rhyme(rhyme_word)
+                sentence = ""
+            elif "\n" not in word:
+                sentence += word + " "
         return
 
     def generate_word(self, dicti, rhyme_words, base_word, prev_word, prev_prev_word, prev_rhyme):
@@ -192,14 +246,39 @@ class LyricsManager:
             else:
                 return random.choice(list(rhyme_dict[rhyme]))
 
+    def getNextSentence(self,sentence,dict):
+        newSentence = random.choice(list(dict.keys()))
+        iter = 0
+        while((dict[newSentence].get_rhyme()!=dict[sentence].get_rhyme() or dict[newSentence].get_sentence() == dict[sentence].get_sentence())and iter<100):
+            newSentence = random.choice(list(dict.keys()))
+            #iter+=1
+        return newSentence
+
+    def generate_lyrcis_sentences(self, dict, rhyme_dict):
+        lyrics = []
+        lyrics.append('')
+
+        for i in range(10):
+            sentence = random.choice(list(dict.keys()))
+            while(sentence in lyrics):
+                sentence = random.choice(list(dict.keys()))
+            lyrics.append(sentence)
+            lyrics.append('\n')
+            while (sentence in lyrics):
+                sentence = self.getNextSentence(sentence,dict)
+            lyrics.append(sentence)
+            lyrics.append('\n')
+        lyrics = " ".join(lyrics)
+        return lyrics
+
     def generate_lyrcis(self, dict, rhyme_dict, word):
-        lyrcis = []
-        lyrcis.append('')
-        lyrcis.append(word.capitalize())
+        lyrics = []
+        lyrics.append('')
+        lyrics.append(word.capitalize())
         prev_word = word
         prev_prev_word = word
         word = self.generate_word(dict, [], word, prev_word, prev_prev_word, 'null')
-        lyrcis.append(word)
+        lyrics.append(word)
 
         for i in range(20):
             # LOSUJE RYM
@@ -221,9 +300,9 @@ class LyricsManager:
 
                     # Poczatek zdania
                     if words_in_line == 1:
-                        lyrcis.append(word.capitalize())
+                        lyrics.append(word.capitalize())
                     else:
-                        lyrcis.append(word)
+                        lyrics.append(word)
 
                     # Jezeli zdanie jest za dlugie wymus dodanie rymu
                     if words_in_line > 8:
@@ -237,15 +316,15 @@ class LyricsManager:
                             word = self.force_rhyme(dict, rhyme_dict, rhyme, rhymes, word)
                             prev_prev_word = prev_word
                             prev_word = prev_word_tmp
-                            lyrcis.append(word)
+                            lyrics.append(word)
 
                     # Jezeli wyraz wylosowany jest w slowniku rymow, przechodzi do kolejnego zdania
                     if word in rhyme_dict[rhyme] and words_in_line > 3:
                         rhymes[rhyme_index] = word
                         rhyme_index = rhyme_index + 1
-                        lyrcis.append('\n')
+                        lyrics.append('\n')
                         break
-            lyrcis.append('\n')
+            lyrics.append('\n')
 
-        lyrcis = " ".join(lyrcis)
-        return lyrcis
+        lyrics = " ".join(lyrics)
+        return lyrics
