@@ -46,8 +46,8 @@ class LyricsManager:
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
-    def createBySong(self, list):
-        for song in list:
+    def createBySong(self, lists):
+        for song in lists:
             file_Name = 'database/Yours/' + song
             phon_Name = 'database/Yours/phonetics/PHON_' + song
             self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
@@ -163,7 +163,7 @@ class LyricsManager:
         if best_word_2 == ' ':
             return best_word_1
 
-        if random.random() > 0.4:
+        if random.random() > 0:
             return best_word_1
         else:
             return best_word_2
