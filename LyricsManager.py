@@ -1,4 +1,5 @@
 from Word import Word
+from Sentence import Sentence
 import re
 import random
 import os
@@ -22,12 +23,14 @@ class LyricsManager:
             if '.txt' in f:
                 file_Name = 'database/' + artist +'/' + f
                 phon_Name = 'database/' + artist  +'/' + 'phonetics/PHON_' + f
-                self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                #self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                self.load_file_sentences(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
 
-        for word in self.dictionary:
-            self.dictionary[word].count_probability()
+        #for word in self.dictionary:
+            #self.dictionary[word].count_probability()
 
-        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        #self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        self.windowText = WindowText(self.generate_lyrcis_sentences(self.dictionary, self.rhyme_dictionary))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
@@ -37,12 +40,14 @@ class LyricsManager:
                 if '.txt' in f:
                     file_Name = 'database/' + dire + '/' + f
                     phon_Name = 'database/'+dire+'/phonetics/PHON_' + f
-                    self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                    #self.load_file(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
+                    self.load_file_sentences(file_Name, phon_Name, self.dictionary, self.rhyme_dictionary)
 
-        for word in self.dictionary:
-            self.dictionary[word].count_probability()
+        #for word in self.dictionary:
+         #   self.dictionary[word].count_probability()
 
-        self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+       # self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
+        self.windowText = WindowText(self.generate_lyrcis_sentences(self.dictionary, self.rhyme_dictionary))
         self.dictionary = {}
         self.rhyme_dictionary = {}
 
@@ -58,6 +63,51 @@ class LyricsManager:
         self.windowText = WindowText(self.generate_lyrcis(self.dictionary, self.rhyme_dictionary, random.choice(list(self.dictionary.keys()))))
         self.dictionary = {}
         self.rhyme_dictionary = {}
+
+    def load_file_sentences(self, file_name, phon_name, dict, rhyme_dict):
+        file = open(file_name, encoding="utf8")
+        words = re.sub("\n", " \n ", file.read().lower())
+        words = words.replace(',', '')
+        words = words.replace('.', '')
+        words = words.replace('!', '')
+        words = words.replace('(', '')
+        words = words.replace('=', '')
+        words = words.replace(')', '')
+        words = words.replace('"', '')
+        words = words.replace('?', '').split(' ')
+
+        phon_file = open(phon_name, encoding="utf8")
+        phonetics = re.sub("\n", " \n ", phon_file.read())
+        phonetics = phonetics.replace(',', '')
+        phonetics = phonetics.replace('.', '')
+        phonetics = phonetics.replace('!', '')
+        phonetics = phonetics.replace('(', '')
+        phonetics = phonetics.replace(')', '')
+        phonetics = phonetics.replace('"', '')
+        phonetics = phonetics.replace('?', '').split(' ')
+
+        sentence = ""
+        for word, rhyme_word, nword in zip(words[0:], phonetics[0:], words[1:]):
+            if "\n" in nword:
+                if len(rhyme_word) > 3:
+                    rhyme_word = rhyme_word[len(rhyme_word) - 3] + rhyme_word[len(rhyme_word) - 2] + rhyme_word[
+                        len(rhyme_word) - 1]
+
+                if len(rhyme_word) > 2:
+                    if rhyme_word not in rhyme_dict.keys():
+                        rhyme_dict[rhyme_word] = [word]
+                    else:
+                        if word not in rhyme_dict[rhyme_word]:
+                            rhyme_dict[rhyme_word] = rhyme_dict[rhyme_word] + [word]
+                sentence += word
+                if sentence not in dict:
+                    dict[sentence] = Sentence(sentence)
+                    dict[sentence].add_sentence(sentence)
+                    dict[sentence].add_rhyme(rhyme_word)
+                sentence = ""
+            elif "\n" not in word:
+                sentence += word + " "
+        return
 
     #Laduje plik wraz z wymowa do dwoch slownikow tworzy polaczenia miedzy wyrazamia
     def load_file(self,file_name, phon_name, dict, rhyme_dict):
@@ -191,6 +241,38 @@ class LyricsManager:
                 return word
             else:
                 return random.choice(list(rhyme_dict[rhyme]))
+
+    def getNextSentence(self, sentence, dict):
+        newSentence = random.choice(list(dict.keys()))
+        iter=0
+        while ((dict[newSentence].get_rhyme() != dict[sentence].get_rhyme() or dict[newSentence].get_sentence() == dict[
+            sentence].get_sentence())and iter<1000):
+            newSentence = random.choice(list(dict.keys()))
+            iter+=1
+        return newSentence
+
+    def generate_lyrcis_sentences(self, dict, rhyme_dict):
+        lyrics = []
+        lyrics.append('')
+
+        for i in range(20):
+            sentence = random.choice(list(dict.keys()))
+            rhyme = dict[sentence].get_rhyme()
+            iter=0
+            while (sentence in lyrics or len(rhyme) < 3 or len(rhyme_dict[rhyme]) == 1):
+                sentence = random.choice(list(dict.keys()))
+                rhyme = dict[sentence].get_rhyme()
+            lyrics.append(sentence)
+            lyrics.append('\n')
+            while ((sentence in lyrics or len(rhyme) < 3 or len(rhyme_dict[rhyme]) == 1) and iter<100):
+                sentence = self.getNextSentence(sentence, dict)
+                rhyme = dict[sentence].get_rhyme()
+                iter+=1
+            lyrics.append(sentence)
+            lyrics.append('\n')
+            lyrics.append('\n')
+        lyrics = " ".join(lyrics)
+        return lyrics
 
     def generate_lyrcis(self, dict, rhyme_dict, word):
         lyrcis = []
