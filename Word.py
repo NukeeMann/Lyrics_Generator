@@ -47,6 +47,8 @@ class Word:
         for word in self.first_bword.keys():
             self.first_bword[word] = self.first_bword.get(word) / float(count)
 
+
+
     # Getery
     def get_first_word_dic(self):
         return self.first_nword
